@@ -38,13 +38,14 @@ public class Students {
     }
 
     @GetMapping("/users")
-    public Students Display() {
+    public String Display() {
 
         Students users = new Students();
         users.setName("Simphiwe");
         users.setSurname("Ntshangase");
         users.setCourse("Information Technology");
-        users.setStudentId(20221985);
-        return users;
+        users.setStudentId(22232239);
+
+        return "name: "+ users.name + "  surname: "+ users.surname + "  course: "+ users.course + "  studentId: "+ users.studentId;
     }
 }
