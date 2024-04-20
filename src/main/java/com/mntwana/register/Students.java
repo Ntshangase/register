@@ -1,8 +1,9 @@
 package com.mntwana.register;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/users")
+@RestController
 public class Students {
     
     private String name;
@@ -34,5 +35,16 @@ public class Students {
     }
     public int getStudentId() {
         return studentId;
+    }
+
+    @GetMapping("/users")
+    public Students Display() {
+
+        Students users = new Students();
+        users.setName("Simphiwe");
+        users.setSurname("Ntshangase");
+        users.setCourse("Information Technology");
+        users.setStudentId(20221985);
+        return users;
     }
 }
