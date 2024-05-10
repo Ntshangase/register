@@ -1,10 +1,7 @@
 package com.mntwana.register;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:3000/")
 @RestController
 public class Students {
     
@@ -39,15 +36,16 @@ public class Students {
         return studentId;
     }
 
-    @GetMapping("/users")
-    public String Display() {
-
-        Students users = new Students();
-        users.setName("Simphiwe");
-        users.setSurname("Ntshangase");
-        users.setCourse("Information Technology");
-        users.setStudentId(22232239);
-
-        return users.name + users.surname + users.course + users.studentId;
+    //overloaded constructor
+    public Students (String name, String surname, String course, int studentId){
+        this.name = name;
+        this.surname = surname;
+        this.course = course;
+        this.studentId = studentId;
     }
+
+    public Students() { // had to add this for the culture.
+
+    }
+
 }
